@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/Admin.css">
+</head>
+
+<body>
+
+
+    <div id="header"></div>
+
+
+    <div class="container">
+        <aside class="sidebar">
+
+        </aside>
+        <section class="content">
+            <!-- Content Header -->
+            <header>
+                <button id="toggleSidebar">☰</button>
+                <span class="header-title">Order</span>
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <h2>(Admin) Order Management </h2>
+                <button onClick="download()">Download Daily Report</button>
+                <form>
+                    <table id="venueTable">
+                        <tr>
+                            <th>No</th>
+                            <th>Create Time</th>
+                            <th>Sport Activity</th>
+                            <th>Venue</th>
+                            <th>Username</th>
+                        </tr>
+                        <tbody id="tbody">
+
+                        </tbody>
+
+                    </table>
+                </form>
+            </div>
+
+
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../a_common/common.js"></script>
+    <script src="../js/order.js"></script>
+
+
+</body>
+
+</html>

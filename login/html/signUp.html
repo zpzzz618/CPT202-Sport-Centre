@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Sign Up</title>  
+<link rel="stylesheet" href="../css/sign-up.css">  
+
+</head>  
+<body>  
+
+<form action="/signup" method="post">  
+    <div class="signup-box">  
+        <div>
+            <h1>Welcome Sign Up!</h1> 
+        </div>
+        
+        <div class="input">
+            <div class="input-combin1">  
+                <label for="username"><b>Username:</b></label>  
+                <input type="text" id="username" name="userName" required> 
+                <label for="Email"><b>E-mail:</b></label>
+                <input type="email" id="email" name="email" required> 
+            </div>  
+           
+            <div class="input-combin2">  
+                <label for="phone"><b>ID:</b></label>  
+                <input type="phone" id="phone" name="phone" required> 
+                <label for="password"><b>Password:</b></label>  
+                <input type="password" id="password" name="password" required>
+            </div>
+        </div>   
+    </div>
+    <div>  
+        <button class="onebutton" type="confirm" id="confirm"><b>Confirm</b></button>    
+    </div>
+    <div>  
+        <button class="twobutton" type="confirm" id="back"><b>Back</b></button>    
+    </div>
+    <div class="agreement">
+        <input type="checkbox" id="agreement" value="Car">I hava read and agree<a href="ptest.html">《Sport Center Agreement》</a>
+    </div>
+    <div class="haveaccount">  
+        <span>Already have an account?</span>
+        <a id="haveaccount" href="logtest.html">Log in now.</a>   
+    </div>
+    
+</form>  
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../../a_common/common.js"></script>
+<script src="../js/signUp.js"></script> 
+</body>  
+</html>

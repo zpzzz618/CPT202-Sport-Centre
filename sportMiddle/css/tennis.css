@@ -1,0 +1,395 @@
+/*body {  
+    margin: 0;  
+    padding: 0;  
+    font-family: Arial, sans-serif;  
+}  */
+
+/*---------------------------导航栏---------------------------*/
+
+.navbar {  
+  list-style-type: none;  
+  margin: 0;  
+  padding: 0;  
+  overflow: hidden;  
+  background-color: #F37335;  
+  height: 50px;
+  width: 100%;
+  /*font-weight: bold;*/
+  font-size: 18px;
+}  
+
+.navbar li {  
+  float: right;  
+}  
+
+.navbar li a {  
+  display: block;  
+  color: white;  
+  text-align: center;  
+  padding: 12px 60px;  
+  text-decoration: none;  
+}  
+
+.navbar li a:hover {  
+  background-color:#ff9a68;  
+}
+
+.kuang{
+  position: absolute;
+}
+.icon-u{
+  position: absolute;
+  left: 4%;
+}
+
+.mes-u{
+  position: absolute;
+  left: 7.5%;
+  font-size: 30px;
+  color: #fff8d3;
+  margin-top: 9px;
+}
+/*------------导航栏下拉框------------------*/
+
+/* 下拉框样式 */  
+.dropdown-menu {  
+display: none; /* 默认隐藏下拉框 */  
+position: absolute;  
+background-color: #fff;  
+min-width: 180px; /* 根据需要调整宽度 */  
+height: 360px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+z-index: 1; /* 确保下拉框显示在其他内容之上 */  
+padding: 0; /* 移除默认的padding */  
+margin-top: 0;
+}  
+
+/* 下拉框中的列表项样式 */  
+.dropdown-menu li {  
+list-style-type: none; /* 移除列表项前的圆点 */  
+margin: 0; /* 移除列表项之间的额外间距 */  
+padding-right: 20px; /* 移除列表项内部的额外间距 */  
+
+}  
+
+/* 下拉框中的链接样式 */  
+.dropdown-menu li a {  
+color: #333;  
+padding: 15px 17px 15px 17px; /* 根据需要调整内边距 */  
+text-decoration: none;  
+display:inline-block; /* 确保链接占据整行 */  
+text-align: center; /* 文本居中显示 */ 
+height: 25px;
+width: 160px; 
+}  
+
+/* 显示下拉框 */  
+.dropdown:hover .dropdown-menu {  
+display: block;  
+}
+
+
+/*-------------*/
+button {  
+padding: 15px 69px 15px 69px; /* 内边距，控制按钮内部的空间 */  
+font-size: 16px; /* 字体大小 */  
+color: white; /* 字体颜色 */  
+background-color: #F37335; /* 背景颜色 */  
+border: none; /* 无边框 */  
+border-radius: 4px; /* 边框圆角 */  
+cursor: pointer; /* 鼠标悬停时变为手形图标 */  
+transition: background-color 0.3s ease; /* 背景颜色过渡效果 */  
+
+}  
+
+/* 鼠标悬停时改变按钮背景颜色 */  
+button:hover {  
+background-color: #ff9a68; /* 悬停时的背景颜色 */  
+}
+
+/*-------------图片加简介部分-----------------*/ 
+body, html {  
+  margin: 0;  
+  padding: 0;  
+  height: 100%;  
+  font-size: 0; /* 用于消除内联元素之间的空白 */  
+}  
+
+.container {  
+  display: flex;  
+  flex-direction: column;  
+  /*height: 100vh; /* 视口高度 */  
+  font-size: initial; /* 重置font-size */  
+}  
+
+.picture {  
+  position: relative;
+  width: 100%;  
+  height: 65vh;  
+  background-color: rgb(237, 181, 181); /* 示例背景色 */  
+  overflow: hidden;
+}  
+.picture img {  
+  width: 100%;  
+  height: auto;  
+  object-fit: cover; /* 这会保持图片的宽高比，同时填充整个容器 */  
+}
+
+.picture .big {
+  
+  position: absolute; /* 绝对定位 */
+  top: 20%; /* 上边距为容器高度的一半 */
+  left: 50%; /* 左边距为容器宽度的一半 */
+  transform: translate(-50%, -50%); /* 使用 transform 属性进行居中调整 */
+  text-align: center; /* 文字居中 */
+  font-weight: bold; /* 加粗 */
+  font-size: 100px; /* 字号为80px */
+  color: white;
+  
+}
+
+  /*------体育馆简介-------*/
+.overlay {
+  position: absolute; /* 绝对定位 */
+  bottom: 0; /* 底部对齐 */
+  left: 0; /* 左侧对齐 */
+  width: 100%; /* 宽度与父容器相同 */
+  height: 65vh; /* 半透明框高度与图片容器高度相同 */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%); /* 底部到顶部渐变 */
+  color: white; /* 文字颜色为白色 */
+  text-align: center; /* 文字居中 */
+  /* line-height: 65vh; /* 与图片容器高度相同，实现垂直居中 */
+  opacity: 0; /* 初始透明度为0，隐藏半透明框 */
+  transition: opacity 0.3s ease; /* 添加过渡效果 */
+  /* ... 其他样式保持不变 ... */  
+  display: flex; /* 添加Flexbox布局 */  
+  justify-content: center; /* 水平居中 */  
+  align-items: center; /* 垂直居中 */  
+  flex-direction: column; /* 子元素垂直排列 */  
+  /* 移除 line-height */  
+  line-height: normal;  
+}
+  
+.picture:hover .overlay {
+  opacity: 1; /* 鼠标悬停时透明度变为1，显示半透明框 */
+}
+  
+.overlay h2{
+  padding-top: 40px;
+  margin-bottom: 10px;
+} 
+.overlay p {  
+  margin: 10px; /* 移除默认的边距 */  
+  /* 可以根据需要添加其他样式 */  
+}
+
+/*-------------人数统计--------------*/
+
+.statistics-container {  
+  display: flex;  
+  height: 60vh;  
+}  
+
+.statistics-info, .statistics-svg {  
+  flex: 1; /* 各占50% */  
+  height: 100%;  
+  background-color: #FFEFD5; /* 示例背景色 */  
+} 
+
+/* -------- 人数信息 -------------------   */
+
+.statistics-info {
+  width: 800px;
+  height: 575px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /*gap: 10px;   全部都改*/
+}
+
+.info {
+  /*border: 1px solid #000;*/
+
+  padding: 90px 50px 50px 50px;/*改过的地方*/
+  text-align: center;
+}
+
+.info h2 {
+  margin: 0;
+}
+
+.info p{
+  font-size: 17px;
+}
+/*改过的地方*/
+
+
+/* -----------  人数统计图  ---------------   */
+.statistics-svg .mycanvas{
+  align-items: center; /* 垂直居中内容 */  
+  justify-content: center; /* 水平居中内容 */
+}
+
+/*-----------------------------地图------------------------------*/
+.map-container {  
+  display: flex;  
+  height: 65vh;  
+}  
+
+.map-img {  
+  flex: 3; /* 占60% */  
+  height: 100%;  
+  background-color: #FFEFD5; /* 示例背景色 */  
+  display: flex; /* 使用Flexbox */  
+  justify-content: center; /* 水平居中 */  
+  align-items: center; /* 垂直居中 */ 
+}  
+
+.map-info {  
+  flex: 2; /* 占40% */  
+  height: 100%;  
+  background-color: #FFEFD5; /* 示例背景色 */  
+}  
+
+.map-info {
+  width: 800px;
+  /*height: 570px;*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /*gap: 10px; 改过的地方*/
+}
+
+.info2 {
+  /*border: 1px solid #000;/* 删 */
+
+  padding: 90px 50px 50px 50px;/*改过的地方*/
+  text-align: center;
+}
+
+.info2 h2 {
+  margin: 0;
+}
+
+.info2 p{
+  font-size: 17px;
+}
+
+/*--------------------评分区域---------------------------*/
+.score {  
+  width: 100%;  
+  height: 30vh;  
+  background-color: #FFEFD5; /* 示例背景色 */  
+}  
+  /* 评分部分 */
+.score {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-direction: row;
+}
+.rating,
+.rating-category,
+.make-review {
+flex: 1; /* 设置每个元素的占比，让它们平均占据父容器宽度 */
+margin: 0 10px; /* 左右外边距，调整元素之间的间隔 */
+display: flex; /* 使用 Flexbox 布局 */
+justify-content: center; /* 水平居中 */
+align-items: center; /* 垂直居中 */
+}
+
+
+/* 评分板块内的样式 */
+.rating-box {
+  display: flex; /* 使用flex布局 */
+  flex-direction: column; /* 子元素竖直排列 */
+  align-items: center; /* 水平居中对齐子元素 */
+  justify-content: center; /* 垂直居中对齐子元素 */
+  background-color: #F37335; /* 设定背景色 */
+  color: white; /* 字体颜色为白色 */
+  padding: 20px; /* 内边距 */
+  border-radius: 10px; /* 边角圆滑处理 */
+  width: 120px; /* 宽度，可以根据需要进行调整 */
+}
+.rating-score {
+  font-size: 30px; /* 数字评分的字体大小 */
+  font-weight: bold; /* 加粗字体 */
+  line-height: 1; /* 行高，用于调整行间距 */
+}
+.rating-count {
+  font-size: 18px; /* 评论数的字体大小 */
+}
+
+/* 评分进度条 */
+.rating-category {
+  flex:0.6;
+  height: 100px;
+  margin: 10px 20px; /* 评分项之间的间隔 */
+  padding-top: 110px;
+}
+.category {
+  position: relative; /* 为绝对定位的子元素设置定位上下文 */
+  width: 100%;
+  margin-bottom: 50px; /* 增加评分项目之间的距离 */ 
+}
+.rating-bar {
+  background-color: #ddd; /* 进度条的背景颜色 */
+  width: 100%; /* 进度条背景的宽度 */
+  height: 20px; /* 进度条的高度 */
+  border-radius: 10px; /* 进度条的圆角 */
+  overflow: hidden; /* 隐藏超出边界的内容 */
+}
+.rating-bar-fill {
+  background: linear-gradient(to right, #FDC830, #F37335); /* 渐变色填充 */
+  width: 0%; /* 初始化宽度 */
+  height: 100%; /* 高度与父元素相同 */
+  border-radius: 10px; /* 与父元素圆角相同 */
+  transition: width 0.5s ease-in-out; /* 过渡效果 */ 
+}
+
+.category-name,
+.category-score {
+  position: absolute; /* 绝对定位名称和得分 */
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 通过向上偏移自身一半的高度来确保居中 */
+  color: rgb(255, 255, 255); /* 文字颜色 */
+  font-weight: bold; /* 文字加粗 */
+  padding: 0 5px; /* 文字周围的内边距 */
+}
+.category-score {
+  right: 10px; /* 得分位于右侧 */
+}
+
+/*进入评价*/
+.make-review{
+  flex: 0.2; /* flex-grow设置为1，表示在有可用空间时会扩张填充 */
+  padding: 10px; /* 内边距 */
+  margin: 0 20px; /* 左右外边距 */
+  text-align: center; /* 文本居中 */
+ 
+}
+.rating {
+  flex: 0.2; /* flex-grow设置为1，表示在有可用空间时会扩张填充 */
+  padding: 10px; /* 内边距 */
+  margin: 0 20px; /* 左右外边距 */
+  text-align: center; /* 文本居中 */
+  /*border-right: 2px solid rgb(226, 96, 96); /* 右侧边界线 */
+}
+
+
+.review-button {
+  flex: 1; /* 让按钮占据父容器的一半空间 */
+  width: 45px;
+  background-color: #FDC830; /* 设定背景色 */
+  color: white; /* 字体颜色为白色 */
+  border: none; /* 去除边框 */
+  padding: 10px; /* 按钮内边距 */
+  border-radius: 10px; /* 圆角边框 */
+  cursor: pointer; /* 鼠标悬停时显示手型光标 */
+  font-size: 16px; /* 字体大小 */
+  transition: background-color 0.3s; /* 添加背景色变化的过渡效果 */
+  margin: 0 20px; /* 左右外边距 */
+}
+.review-button:hover {
+  background-color: #F37335; /* 鼠标悬停时背景色变化 */
+}
+
+

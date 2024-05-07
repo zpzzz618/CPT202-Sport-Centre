@@ -1,0 +1,454 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ecf0f1;
+    /* 你的灰色背景 */
+
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    min-height: 100vh;
+    position: fixed;
+    /* 添加这个属性，为绝对定位的子元素提供参照点 */
+    padding-bottom: 60px;
+    /* 添加足够的内边距，以确保按钮不会覆盖其他内容 */
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    /* 如果内容过长，允许滚动 */
+
+}
+
+.toggleSidebar {
+    margin-right: 20px;
+    /* 在按钮和标题之间添加一些空间 */
+    cursor: pointer;
+    background-color: transparent;
+    /* 或者任何希望的颜色 */
+    border: none;
+    /* 去除边框 */
+    padding: 10px;
+    /* 或根据需要调整 */
+    /* 其他必要的样式 */
+}
+
+
+.sidebar .logo {
+    padding: 10px;
+    background: #1abc9c;
+    text-align: center;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar .menu ul li.active {
+    background-color: #335065;
+    /* 深蓝色背景 */
+    color: white;
+    /* 白色文本 */
+}
+
+.sidebar .menu ul li a {
+    color: white;
+    /* 设置链接文本为白色 */
+    text-decoration: none;
+    /* 去除下划线 */
+}
+
+/* 针对活跃状态的链接样式 */
+.sidebar .menu ul li.active a {
+    color: white;
+    /* 在这里也要设置为白色，以确保活跃状态下的链接颜色正确 */
+}
+
+.content {
+    flex-grow: 1;
+    background: #ecf0f1;
+    padding: 15px;
+    margin-left: 265px;
+    /* 根据 sidebar 的宽度和 padding 调整 */
+    transition: margin-left 0.3s;
+}
+
+
+.content header {
+    margin-left: 0;
+    /* 设置为0或确保这个值与侧边栏宽度一致 */
+    background: #f5c502;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.content h2 {
+    color: #3498db;
+}
+
+label {
+    display: block;
+    margin-top: 80px;
+    width: 100%;
+    /* 让标签占据整行 */
+}
+
+form {
+    width: 80%;
+    /* 设置表单的宽度为页面宽度的80% */
+    margin: 50px auto 0;
+    /* 将表单垂直居中，并与上方的文本有一定的距离 */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    /* 让标签占据整行 */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    /* 增加下外边距 */
+
+    border: 1px solid #ccc;
+    /* 添加边框，并设置边框样式和颜色 */
+    border-radius: 6px;
+    /* 可选，添加边框圆角 */
+    box-sizing: border-box;
+    /* 可选，确保边框大小包含在输入框的宽度内 */
+}
+
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    /* 增加的间距 */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    /* 设置边框样式和颜色 */
+    border-radius: 4px;
+    /* 可选，添加边框圆角 */
+    box-sizing: border-box;
+    /* 可选，确保边框大小包含在选择框的宽度内 */
+}
+
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F37335;
+    height: 50px;
+    width: 100%;
+    font-size: 17px;
+}
+
+.navbar li {
+    float: right;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 60px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #ff9a68;
+}
+
+.icon-u{
+    position: absolute;
+    left: 4%;
+  }
+  
+  .mes-u{
+    position: absolute;
+    left: 7.5%;
+    font-size: 30px;
+    color: #fff8d3;
+    margin-top: 9px;
+  }
+  
+
+button {
+    padding: 10px 20px;
+    /* 按钮内边距 */
+    margin-top: 20px;
+    /* 按钮之间的垂直间距 */
+    margin-right: 10px;
+    /* 按钮之间的水平间距 */
+    border: none;
+    /* 移除按钮边框 */
+    border-radius: 8px;
+    /* 添加按钮稍微圆角 */
+    background-color: #3498db;
+    /* 设置按钮背景颜色 */
+    color: white;
+    /* 设置按钮文字颜色 */
+    cursor: pointer;
+    /* 鼠标悬停时显示指针 */
+    transition: background-color 0.3s;
+    /* 添加按钮背景颜色过渡效果 */
+}
+
+button:hover {
+    background-color: #2980b9;
+    /* 设置鼠标悬停时的背景颜色 */
+}
+
+/* 将两个按钮水平居中 */
+button:first-child {
+    margin-left: auto;
+}
+
+button:last-child {
+    margin-right: auto;
+    background-color: #555;
+    /* 设置取消按钮的背景颜色为深灰色 */
+}
+
+button:last-child:hover {
+    background-color: #999;
+    /* 设置鼠标悬停时的背景颜色为浅灰色 */
+}
+
+
+/* 更改按钮的父元素的样式以更改按钮的位置 */
+.operation_button {
+    position: relative;
+    margin-top: 20px;
+    /* 修改按钮距离上方的距离 */
+}
+
+/* 更改按钮的样式 */
+.operation_custom_button {
+    width: 20px;
+    /* 修改按钮的宽度 */
+    height: 20px;
+    /* 修改按钮的高度 */
+    /* 添加其他样式，如背景颜色、边框、圆角等 */
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 更改按钮图片的样式 */
+.operation_custom_button img {
+    width: 100%;
+    /* 使图片填充整个按钮 */
+    height: 100%;
+}
+
+
+
+.header-container {
+    position: relative;
+    /* 为子元素的绝对定位提供基准 */
+    background-color: yellow;
+    /* 黄色背景 */
+    /* 其他样式 */
+}
+
+.add-button {
+    position: absolute;
+    /* 绝对定位 */
+    right: 10px;
+    /* 距离容器右边的距离 */
+    top: -40px;
+    /* 距离容器顶部的距离 */
+}
+
+.add-button img {
+    width: 40px;
+    /* 图片宽度 */
+    height: 40px;
+    /* 图片高度 */
+    /* 如果需要，还可以添加其他样式，例如边框、阴影等 */
+}
+
+.modify-button {
+    position: absolute;
+    /* 绝对定位 */
+    right: 70px;
+    /* 距离容器右边的距离 */
+    top: -40px;
+    /* 距离容器顶部的距离 */
+}
+
+.modify-button img {
+    width: 40px;
+    /* 图片宽度 */
+    height: 40px;
+    /* 图片高度 */
+    /* 如果需要，还可以添加其他样式，例如边框、阴影等 */
+}
+
+.questions-container {
+    margin-bottom: 20px;
+}
+
+.question-answer-pair {
+    margin-bottom: 10px;
+}
+
+.question-dropdown,
+.answer-input,
+.question-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.buttons-container {
+    text-align: center;
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+
+
+/* add_information_buttons.css 文件中的按钮样式 */
+
+#add_information_saveChanges,
+#add_information_cancelChanges {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#add_information_saveChanges {
+    background-color: #4CAF50;
+    /* 绿色 */
+    color: white;
+}
+
+#add_information_cancelChanges {
+    background-color: #f44336;
+    /* 红色 */
+    color: white;
+}
+
+#add_information_saveChanges:hover {
+    background-color: #45a049;
+    /* 深绿色 */
+}
+
+#add_information_cancelChanges:hover {
+    background-color: #d32f2f;
+    /* 深红色 */
+}
+
+.logo {
+    display: flex;
+    /* 使用flex布局 */
+    align-items: center;
+    /* 垂直居中对齐子元素 */
+    justify-content: space-between;
+    /* 水平分布子元素，图片靠左，文字靠右 */
+}
+
+.circle-avatar {
+    width: 50px;
+    /* 设置你想要的圆形头像的直径 */
+    height: 50px;
+    /* 设置高度与宽度相同，以保持圆形 */
+    border-radius: 50%;
+    /* 设置为50%来创建圆形 */
+    overflow: hidden;
+    /* 隐藏超出圆形边框的图片部分 */
+
+}
+
+.logo-text {
+    font-size: 20px;
+    /* 放大文字，根据需要调整字体大小 */
+    /* flex布局会自动处理水平对齐，通过justify-content: space-between;已经实现了文字靠右 */
+}
+
+.logo::after {
+    content: "";
+    display: table;
+    clear: both;
+    /* 清除浮动，确保容器包含浮动元素 */
+}
+
+.circle-avatar img {
+    width: 100%;
+    /* 图片宽度设置为容器宽度，以保持比例 */
+    height: auto;
+    /* 图片高度自动调整以保持比例 */
+
+}
+
+/*log off按钮*/
+.log-off {
+    background-color: #ff4d4d;
+    /* 设置醒目的背景颜色，例如红色 */
+    color: white;
+    /* 设置字体颜色为白色，确保文字可读性 */
+    text-align: center;
+    /* 文字居中对齐 */
+    padding: 10px 0;
+    /* 增加上下的内边距 */
+    margin-top: 10px;
+    /* 与上方元素的间隔 */
+    border-radius: 5px;
+    /* 轻微的圆角边缘 */
+    font-weight: bold;
+    /* 加粗字体 */
+    /* 可以添加 :hover 伪类来改善鼠标悬停时的视觉效果 */
+}
+
+.log-off a {
+    color: inherit;
+    /* 使链接的颜色与父元素相同 */
+    text-decoration: none;
+    /* 去除下划线 */
+    display: block;
+    /* 让链接填满整个 .log-off 容器 */
+}

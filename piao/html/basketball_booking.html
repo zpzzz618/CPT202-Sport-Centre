@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking System</title>
+    <link rel="stylesheet" href="../css/basketball_booking.css">
+</head>
+
+<body>
+
+
+    <nav> <!--问题一：导航栏是做跟随移动还是固定的？-->
+        <ul class="navbar">
+            <li><a href="/user/html/personal_information_display.html">Personal Center</a></li>
+            <li><a href="/community/html/community.html">Community</a></li>
+            <li><a href="/piao/html/football_booking.html">Booking</a></li>
+            <li><a href="/home/html/homePage.html">Home</a></li>
+            <li id="admin"><a href="/admin/html/Admin.html">Admin</a></li>
+            <svg class="icon-u" width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+                <g transform="scale(0.26)">
+                  <!-- 体育馆主体，采用动感的波浪形状 -->
+                  <path d="M 20,100 C 50,30 150,30 180,100" fill="none" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆顶部，用直线连接波浪的两端 -->
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆门，用矩形表示 -->
+                  <rect x="70" y="90" width="60" height="20" fill="#FFEFD5" />
+                  <!-- 动感元素，表现运动的速度和能量 -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#FFEFD5" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="100" y1="20" x2="100" y2="80" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <!-- 太阳谷大学英文名称缩写，位于图标中心 -->
+                  <text x="100" y="140" font-family="Arial" font-size="30" fill="#FFEFD5" text-anchor="middle">SVU</text>
+                </g>
+              </svg>
+        
+              <p class="mes-u"><strong>SVU</strong></p>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <aside class="sidebar">
+            <!-- Sidebar content -->
+            <div class="logo">LOGO</div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="football_booking.html">Football</a></li> <!-- 添加active类 -->
+                    <li class="active"><a href="basketball_booking.html">Basketball</a></li>
+                    <li><a href="volleyball_booking.html">Volleyball</a></li>
+                    <li><a href="badminton_booking.html">Badminton</a></li>
+                    <li><a href="table_tennis_booking.html">Table Tennis</a></li>
+                    <li><a href="tennis_booking.html">Tennis</a></li>
+                    <li><a href="fitness_booking.html">Fitness</a></li>
+                    <li><a href="swim_booking.html">Fitness</a></li>
+
+                </ul>
+            </nav>
+
+        </aside>
+        <section class="content">
+            <!-- Content Header -->
+            <header>
+                <button id="toggleSidebar">☰</button>
+                <span class="header-title">Booking / Buy</span>
+            </header>
+
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <h2>Select Ticket </h2>
+                <form>
+                    <input type="date" value="2024-04-22" id="date">
+
+                </form>
+            </div>
+
+
+
+
+
+            <div class="timeslot-container">
+                <div class="vertical-time-labels">
+                    <!-- 绝对定位的时间标签 -->
+                    <div class="time-slot-label">9:00-10:00</div>
+                    <div class="time-slot-label">10:00-11:00</div>
+                    <div class="time-slot-label">11:00-12:00</div>
+                    <div class="time-slot-label">12:00-13:00</div>
+                    <div class="time-slot-label">13:00-14:00</div>
+                    <div class="time-slot-label">14:00-15:00</div>
+                    <div class="time-slot-label">15:00-16:00</div>
+                    <div class="time-slot-label">16:00-17:00</div>
+                    <div class="time-slot-label">17:00-18:00</div>
+                    <div class="time-slot-label">18:00-19:00</div>
+                    <div class="time-slot-label">19:00-20:00</div>
+                    <div class="time-slot-label">20:00-21:00</div>
+                </div>
+
+
+                <div id="court-header" class="court-header">
+                    <div class="court-label">Court 1</div>
+                    <div class="court-label">Court 2</div>
+                    <div class="court-label">Court 3</div>
+                </div>
+                <div id="content">
+                </div>
+                </div>
+                </section>
+
+            </div>
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="../../a_common/common.js"></script>
+            <script src="../js/basketball_booking.js"></script>
+            <script src="../../a_common/date.js"></script>
+            <script src="../js/date.js"></script>
+
+
+
+
+</body>
+
+</html>

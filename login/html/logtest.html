@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Welcome</title>  
+<link rel="stylesheet" href="../css/logtest.css">  
+
+</head>  
+<body>  
+<!--问题一：背景做为动态视频效果？参考keep-->
+<form action="/login" method="post">  
+    <div class="login-box">  
+        <h2 style="color: #F37335;">Welcome to Sign In！</h2>  
+        <div class="input-container">  
+            <label style="color: rgb(0, 0, 0);" for="username">Username:</label>  
+            <input  type="text" id="username" name="userName" required>  
+        </div>  
+        <div class="input-container">  
+            <label style="color: rgb(0, 0, 0);" for="password">Password:</label>  
+            <input type="password" id="password" name="password" required>  
+        </div>  
+        <div class="button-container">  
+            <button style="color: rgb(0, 0, 0);" type="submit" id="submit"><b>Sign In</b></button> <!--登录-->
+            <button style="color: rgb(0, 0, 0);" type="signin" id="signup"><b>Sign Up</b></button><!--注册-->
+        </div>  
+        <div class="agreement">
+            <input type="checkbox" id="agreement">I have read and agree<a href="ztest.html">《Sport Center Agreement》</a>
+        </div>
+       
+        <div class="forgot-password">  
+            <a id="passwordLink" href="fpsendemail.html">Forgot Password?</a>   
+        </div>  
+        <div class="other-login">
+            <p style="color: rgb(0, 0, 0);">----Other login methods----</p>
+            <a id="emailLink" href="#123">QRcode</a>
+            <a id="phoneLink" href="#123">Phone</a>
+        </div>
+       
+    </div>
+
+</form>  
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../../a_common/common.js"></script>
+<script src="../js/logtest.js"></script>   
+
+</body>  
+</html>
+<!--
+    1.用户名为自己起的名字/或者输入邮箱也可以（？）
+        密码正确点击signin按钮即可登录进入首页，
+            如果没有勾选同意书将会弹窗出现“请同意xxx”
+            如果勾选了同意将顺利进入
+        密码错误点击signin按钮后将显示“密码或用户名错误”
+    2.如果没有账号，可以点击signup按钮进入注册界面
+        邮箱和电话号码是唯一的，用户名可以重复
+            如果邮箱重复将会在输入框上方文字提醒，电话号码同理
+        密码的设置必须有字母和数字（规则待定）
+        是否需要注册同意书（？）
+        当点进注册页面时想起来自己注册过了，可以点击back按钮，或者右下角loginnow回到signin界面
+    
+    
+    
+    
+    
+        3.如果忘记了自己的账号，可以点击forget password进入重新设置密码reset界面
+        输入自己注册的邮箱，和两次密码（密码有要求，如果没有满足要求密码不会通过------
+            如果是有效邮箱但两次密码不一致，点击confirm会提示密码不一致
+            如果是有效邮箱且两次密码一致，将会发送一封邮件，邮箱中会有一个验证码六位数字
+                当输入正确的验证码时，同时也正确的输入了两次密码，点击confirm将会返回登录界面来登录
+                当输入正确的验证码时，同时也两次输入密码不一样，点击confirm会提示两次密码不一致
+                当输入错误的验证码时，同时也正确的输入了两次密码，点击confirm将会提示验证码错误
+                当输入错误的验证码时，同时也错误的输入
+        如果不想重置密码，就点back回到signin界面
+
+        （讨论一下验证方式）
+
+    4。选择其他登录方式（目前是二维码和电话号码，可改）
+     如果选择qrcode（？）提供一个二维码，用什么扫？则呢么判断对不对？
+     如果选择电话号码，发验证码？
+
+-->
+
+<!--
+    页面显示问题，vh，%，px的应用不当导致改变窗口时大小改变了。待解决
+-->
+

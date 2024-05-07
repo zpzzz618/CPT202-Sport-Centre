@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ecf0f1;
+    /* 你的灰色背景 */
+
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    min-height: 100vh;
+    position: fixed;
+    /* 添加这个属性，为绝对定位的子元素提供参照点 */
+    padding-bottom: 60px;
+    /* 添加足够的内边距，以确保按钮不会覆盖其他内容 */
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    /* 如果内容过长，允许滚动 */
+
+}
+
+.toggleSidebar {
+    margin-right: 20px;
+    /* 在按钮和标题之间添加一些空间 */
+    cursor: pointer;
+    background-color: transparent;
+    /* 或者任何希望的颜色 */
+    border: none;
+    /* 去除边框 */
+    padding: 10px;
+    /* 或根据需要调整 */
+    /* 其他必要的样式 */
+}
+
+
+.sidebar .logo {
+    padding: 10px;
+    background: #1abc9c;
+    text-align: center;
+}
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar .menu ul li.active {
+    background-color: #335065;
+    /* 深蓝色背景 */
+    color: white;
+    /* 白色文本 */
+}
+
+.sidebar .menu ul li a {
+    color: white;
+    /* 设置链接文本为白色 */
+    text-decoration: none;
+    /* 去除下划线 */
+}
+
+/* 针对活跃状态的链接样式 */
+.sidebar .menu ul li.active a {
+    color: white;
+    /* 在这里也要设置为白色，以确保活跃状态下的链接颜色正确 */
+}
+
+
+
+/*导航栏部分*/
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1c3e66;
+    height: 50px;
+    width: 100%;
+}
+
+.navbar li {
+    float: right;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 60px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar li a:hover {
+    background-color: #2d66a7;
+}
+
+button {
+    padding: 10px 20px;
+    /* 按钮内边距 */
+    margin-top: 20px;
+    /* 按钮之间的垂直间距 */
+    margin-right: 10px;
+    /* 按钮之间的水平间距 */
+    border: none;
+    /* 移除按钮边框 */
+    border-radius: 8px;
+    /* 添加按钮稍微圆角 */
+    background-color: #3498db;
+    /* 设置按钮背景颜色 */
+    color: white;
+    /* 设置按钮文字颜色 */
+    cursor: pointer;
+    /* 鼠标悬停时显示指针 */
+    transition: background-color 0.3s;
+    /* 添加按钮背景颜色过渡效果 */
+}
+
+button:hover {
+    background-color: #2980b9;
+    /* 设置鼠标悬停时的背景颜色 */
+}
+
+
+
+
+
+
+
+.content {
+    flex-grow: 1;
+    background: #ecf0f1;
+    padding: 15px;
+    margin-left: 265px;
+    /* 根据 sidebar 的宽度和 padding 调整 */
+    transition: margin-left 0.3s;
+}
+
+
+.content header {
+    margin-left: 0;
+    /* 设置为0或确保这个值与侧边栏宽度一致 */
+    background: #26568d;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.content h2 {
+    color: #3498db;
+}
+
+label {
+    display: block;
+    margin-top: 80px;
+    width: 100%;
+    /* 让标签占据整行 */
+}
+
+form {
+    width: 80%;
+    /* 设置表单的宽度为页面宽度的80% */
+    margin: 50px auto 0;
+    /* 将表单垂直居中，并与上方的文本有一定的距离 */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    /* 让标签占据整行 */
+}
+
+
+
+
+
+.timeslot-container {
+    position: relative;
+    /* 设置相对定位，作为绝对定位时间标签的参考 */
+    max-width: 800px;
+    margin: auto;
+
+}
+
+.court-header {
+    display: flex;
+    justify-content: space-between;
+    /* 分散对齐时间标签 */
+    background-color: #ecf0f1;
+    /* 灰色背景 */
+    padding: 10px;
+    /* 增加一些内边距 */
+    margin-bottom: 5px;
+    /* 与下面的网格之间的间隔 */
+}
+
+.court-label {
+    flex: 1;
+    text-align: center;
+    /* 时间文本居中对齐 */
+    font-weight: bold;
+    /* 时间文本加粗 */
+}
+
+.timeslot-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许小方格换行 */
+
+}
+
+.timeslot {
+    flex: 1;
+    /* 使每个小方格宽度匹配时间标签 */
+    height: 50px;
+    margin: 2px;
+    /* 间距 */
+    background-color: #3498db;
+    /* 蓝色背景 */
+    border-radius: 10px;
+    /* 设置圆角大小 */
+}
+
+
+
+
+.vertical-time-labels {
+    position: absolute;
+    /* 绝对定位 */
+    left: -60px;
+    /* 与容器的左边对齐 */
+    top: 40px;
+    /* 与容器的顶部对齐 */
+    bottom: 0;
+    /* 与容器的底部对齐 */
+    flex-direction: column;
+    /* 垂直排列时间标签 */
+    justify-content: space-around;
+    /* 分散时间标签 */
+}
+
+.time-slot-label {
+    /* 设置时间标签的样式，例如 padding, font-size 等 */
+    padding: 5px 10px;
+    /* 示例 padding */
+    background: #ecf0f1;
+    /* 示例背景颜色 */
+    margin-bottom: 25px;
+
+    /* 设置标签之间的间距 */
+    /* 如果第一个标签不需要顶部间距 */
+    &:first-child {
+        margin-top: 0;
+    }
+
+    /* 如果最后一个标签不需要底部间距 */
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* 其余的 CSS 保持不变 */
+.week-bar {
+    display: flex;
+    width: 100%;
+    background-color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+.day {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #34495e;
+    padding: 10px 0;
+    color: #ecf0f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.day:last-child {
+    border-right: none;
+}
+
+.day:nth-child(odd) {
+    background-color: #2c3e50;
+}
+
+.day:nth-child(even) {
+    background-color: #34495e;
+}
+
+/* 特定于选中日期的独立样式 */
+.selected-day {
+    flex: 1;
+    text-aligh: center;
+    border-right: 1px solid #34495e;
+    background-color: #fff;
+    /* 白色背景 */
+    color: #000;
+    /* 黑色文字 */
+    padding: 10px 0;
+    /* 保持与.day类相同的填充 */
+    text-align: center;
+    /* 文本居中 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* 使用无衬线字体 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* 轻微阴影效果增加立体感 */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+}
+
+.readinput {
+    border: none;
+    /* 设置边框为无 */
+    outline: none;
+    /* 清除默认的轮廓样式 */
+}

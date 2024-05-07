@@ -1,0 +1,18 @@
+.body{
+    font-family: Arial, sans-serif;  
+  display: flex;  /*Flex布局是一种一维布局模型，它可以轻松地在不同的屏幕尺寸和设备上设计灵活的响应式布局结构。*/
+  justify-content: center;  /*justify-content属性用于在主轴（默认为水平方向）上对齐flex子项。这里设置为center，意味着<body>元素的子项会在水平方向上居中。*/
+  align-items: center;  /*align-items属性用于在交叉轴（默认为垂直方向）上对齐flex子项。这里设置为center，意味着<body>元素的子项会在垂直方向上居中。*/
+  height: 100vh;  /*设置了<body>元素的高度为其视口高度（viewport height）的100%。vh是一个视口单位，它等于视口高度的1%。因此，100vh意味着<body>元素将占据整个视口的高度。*/
+  margin: 0;  /*将<body>元素的外边距（margin）设置为0。默认情况下，浏览器会给<body>元素一定的外边距，这行代码将其去除，确保<body>元素从视口的顶部和底部开始，没有额外的空间。*/
+  background-color: #f2f2f2;  /*设置了<body>元素的背景颜色为#f2f2f2，这是一个浅灰色。*/
+   
+  padding: 0; 
+}
+.body h3{
+    text-align: center;  
+    margin-bottom: 20px; 
+}
+.body p{
+    margin-bottom: 20px; 
+}

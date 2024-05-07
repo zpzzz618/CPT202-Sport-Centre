@@ -1,0 +1,662 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {  
+  list-style-type: none;  
+  margin: 0;  
+  padding: 0;  
+  overflow: hidden;  
+  background-color: #F37335;  
+  height: 50px;
+  width: 100%;
+  /*font-weight: bold;*/
+  font-size: 17px;
+}  
+
+.navbar li {  
+  float: right;  
+}  
+
+.navbar li a {  
+  display: block;  
+  color: white;  
+  text-align: center;  
+  padding: 12px 60px;  
+  text-decoration: none;  
+}  
+
+.navbar li a:hover {  
+  background-color:#ff9a68;  
+}
+
+.icon-u{
+  position: absolute;
+  left: 4%;
+}
+
+.mes-u{
+  position: absolute;
+  left: 7.5%;
+  font-size: 30px;
+  color: #fff8d3;
+  margin-top: 9px;
+}
+
+
+/*总*/
+.container {
+  display: flex;
+  flex-direction: column;
+  /* 竖直排列 */
+  align-items: center;
+  /* 中心对齐使得内容在较宽屏幕上也居中 */
+  margin: 20px 0;
+  /* 外边距，可根据需要调整 */
+}
+
+.venue-selection,
+.review-section,
+.venue-review {
+  margin-bottom: 20px;
+  /* 每个部分之间的间距 */
+}
+
+
+/* part1 */
+.venue-selection {
+  display: flex;
+  flex-wrap: wrap;
+  /* 允许内容换行 */
+  justify-content: center;
+  /* 父容器中的子元素水平居中 */
+  align-items: center;
+  /* 父容器中的子元素垂直居中 */
+  overflow-x: auto;
+  /* 允许水平滚动 */
+  padding: 10px 0;
+}
+
+/* 场馆选择按钮样式 */
+.venue-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  margin-right: 20px;
+  /* 每个选项之间的间距 */
+  cursor: pointer;
+  /* 鼠标悬停时显示指针形状 */
+  outline: none;
+  transition: transform 0.3s ease;
+  /* 平滑变换效果 */
+}
+
+/* 鼠标悬停在选项上时的效果 */
+.venue-option:hover {
+  transform: scale(1.2);
+  /* 稍微放大 */
+}
+
+/* 场馆名称样式 */
+.venue-name {
+  display: block;
+  /* 以块级元素显示，确保在图标下方 */
+  color: #333;
+  /* 文本颜色 */
+  font-size: 14px;
+  /* 文本大小 */
+}
+
+/* Google Material Icons基础样式 */
+.material-icons {
+  font-size: 36px;
+  /* 设置图标大小 */
+  color: #555;
+  /* 默认图标颜色 */
+  margin-bottom: 8px;
+  /* 图标和文本之间的间距 */
+  transition: color 0.3s;
+  /* 平滑颜色变化 */
+}
+
+/* 图标大小类 */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-56 {
+  font-size: 56px;
+}
+
+.material-icons.md-64 {
+  font-size: 64px;
+}
+
+/* 鼠标悬停在图标上时的样式 */
+.venue-option:hover .material-icons {
+  color: orange;
+  /* 橙黄色，鼠标悬停时的颜色 */
+}
+
+.venue-option.active {
+  transform: scale(1.2);
+  /* 稍微放大 */
+}
+
+.venue-option.active .material-icons {
+  color: orange;
+  /* 橙黄色 */
+}
+
+
+
+
+
+/* part2 */
+* {
+  box-sizing: border-box;
+  /* 确保元素的padding和border不会增加它的总宽度或总高度 */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* 设定页面的默认字体 */
+  margin: 0;
+  /* 移除默认的外边距 */
+  padding: 0;
+  /* 移除默认的内边距 */
+  background-color: #f4f4f4;
+  /* 设定页面的背景色 */
+  margin: 0 0px;
+  /* 添加外边距来与周围元素保持间距 */
+}
+
+.review-section {
+  display: flex;
+  /* 使用flex布局使子元素水平排列 */
+  justify-content: space-around;
+  /* 子元素在主轴线上均匀分布 */
+  align-items: center;
+  /* 子元素在交叉轴上居中对齐 */
+  width: 95%;
+  /* 使评分模块占满父容器宽度 */
+  padding: 20px 0;
+  /* 在上下添加内边距 */
+  background-color: #fff;
+  /* 设定背景色为白色 */
+  border-radius: 8px;
+  /* 边角圆滑处理 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* 添加阴影效果以提升层次感 */
+  margin: 0 50px;
+  /* 添加外边距来与周围元素保持间距 */
+  border: 2px solid rgb(202, 200, 200);
+}
+
+
+/* 评分部分 */
+.rating {
+  flex: 0.2;
+  /* flex-grow设置为1，表示在有可用空间时会扩张填充 */
+  padding: 10px;
+  /* 内边距 */
+  margin: 0 20px;
+  /* 左右外边距 */
+  text-align: center;
+  /* 文本居中 */
+  border-right: 2px solid rgb(202, 200, 200);
+  /* 右侧边界线 */
+}
+
+/* 评分板块内的样式 */
+.rating-box {
+  display: flex;
+  /* 使用flex布局 */
+  flex-direction: column;
+  /* 子元素竖直排列 */
+  align-items: center;
+  /* 水平居中对齐子元素 */
+  justify-content: center;
+  /* 垂直居中对齐子元素 */
+  background-color: #F37335;
+  /* 设定背景色 */
+  color: white;
+  /* 字体颜色为白色 */
+  padding: 20px;
+  /* 内边距 */
+  border-radius: 10px;
+  /* 边角圆滑处理 */
+  width: 150px;
+  /* 宽度，可以根据需要进行调整 */
+}
+
+.rating-score {
+  font-size: 48px;
+  /* 数字评分的字体大小 */
+  font-weight: bold;
+  /* 加粗字体 */
+  line-height: 1;
+  /* 行高，用于调整行间距 */
+}
+
+.rating-description {
+  font-size: 18px;
+  /* 描述性文字的字体大小 */
+  margin: 5px 0;
+  /* 在描述性文字上下添加外边距 */
+}
+
+.rating-count {
+  font-size: 14px;
+  /* 评论数的字体大小 */
+}
+
+
+
+/* 评分进度条 */
+.rating-category {
+  flex: 0.4;
+  height: 100px;
+  margin: 10px 20px;
+  /* 评分项之间的间隔 */
+}
+
+.category {
+  position: relative;
+  /* 为绝对定位的子元素设置定位上下文 */
+  width: 100%;
+  margin-bottom: 50px;
+  /* 增加评分项目之间的距离 */
+}
+
+
+.category-name {
+  left: 10px;
+  /* 名称位于左侧 */
+}
+
+
+.rating-bar {
+  background-color: #ddd;
+  /* 进度条的背景颜色 */
+  width: 100%;
+  /* 进度条背景的宽度 */
+  height: 20px;
+  /* 进度条的高度 */
+  border-radius: 10px;
+  /* 进度条的圆角 */
+  overflow: hidden;
+  /* 隐藏超出边界的内容 */
+}
+
+
+
+.rating-bar-fill {
+  background: linear-gradient(to right, #FDC830, #F37335);
+  /* 渐变色填充 */
+  width: 0%;
+  /* 初始化宽度 */
+  height: 100%;
+  /* 高度与父元素相同 */
+  border-radius: 10px;
+  /* 与父元素圆角相同 */
+  transition: width 0.5s ease-in-out;
+  /* 过渡效果 */
+
+}
+
+.category-name,
+.category-score {
+  position: absolute;
+  /* 绝对定位名称和得分 */
+  top: 50%;
+  /* 垂直居中 */
+  transform: translateY(-50%);
+  /* 通过向上偏移自身一半的高度来确保居中 */
+  color: rgb(255, 255, 255);
+  /* 文字颜色 */
+  font-weight: bold;
+  /* 文字加粗 */
+  padding: 0 5px;
+  /* 文字周围的内边距 */
+}
+
+.category-score {
+  right: 10px;
+  /* 得分位于右侧 */
+}
+
+
+
+
+/*进入评价*/
+.make-review {
+  flex: 0.2;
+  /* flex-grow设置为1，表示在有可用空间时会扩张填充 */
+  padding: 10px;
+  /* 内边距 */
+  margin: 0 20px;
+  /* 左右外边距 */
+  text-align: center;
+  /* 文本居中 */
+  border-left: 2px solid rgb(202, 200, 200);
+  /* 右侧边界线 */
+}
+
+.review-button {
+  flex: 0.5;
+  /* 让按钮占据父容器的一半空间 */
+  background-color: #FDC830;
+  /* 设定背景色 */
+  color: white;
+  /* 字体颜色为白色 */
+  border: none;
+  /* 去除边框 */
+  padding: 20px;
+  /* 按钮内边距 */
+  border-radius: 10px;
+  /* 圆角边框 */
+  cursor: pointer;
+  /* 鼠标悬停时显示手型光标 */
+  font-size: 16px;
+  /* 字体大小 */
+  transition: background-color 0.3s;
+  /* 添加背景色变化的过渡效果 */
+  margin: 0 40px;
+  /* 左右外边距 */
+}
+
+.review-button:hover {
+  background-color: #F37335;
+  /* 鼠标悬停时背景色变化 */
+}
+
+
+/*精选评论*/
+.comment-container {
+  display: flex;
+  /* 使用 Flexbox 布局 */
+  flex-wrap: wrap;
+  /* 允许换行 */
+  gap: 20px;
+  /* 评论之间的间距 */
+  margin: 0 100px;
+  margin-top: 20px;
+}
+
+.comment-column {
+  flex: 1;
+}
+
+.comment {
+  flex: 1 1 calc(25% - 20px);
+  /* 让每个评论占据四分之一的宽度，并考虑到间距 */
+  border: 2px solid rgb(202, 200, 200);
+  /* 黑色边框 */
+  box-shadow: 5px 5px 6px #F37335;
+  /* 添加阴影效果以提升层次感 */
+  border-radius: 10px;
+  /* 圆角边框 */
+  margin: 20px 0;
+  /* 上下外边距 */
+  padding: 20px;
+  /* 内边距 */
+  background-color: white;
+  /* 添加白色背景 */
+  height: auto;
+  /* 设置高度为自动，允许内容撑开高度 */
+  margin-bottom: 20px;
+  /* 固定间距 */
+}
+
+.comment:hover {
+  transform: scale(1.1) rotate(2deg);
+  /* 悬停时旋转5度 */
+  transition: transform 0.3s ease;
+  /* 添加过渡效果 */
+}
+
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 添加这行 */
+  padding: 10px 0;
+}
+
+.comment-header,
+.comment-contents {
+  border-bottom: 2px solid rgb(202, 200, 200);
+  /* 黑色边框，分割线 */
+  padding: 10px 0;
+  /* 内边距 */
+}
+
+.comment-contents:last-child,
+.show-details:last-child {
+  border-bottom: none;
+  /* 最后一个评论内容和展示细节按钮不需要底部边框 */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 50px;
+  /* 用户头像宽度 */
+  height: 50px;
+  /* 用户头像高度 */
+  border-radius: 50%;
+  /* 圆形头像 */
+  margin-right: 10px;
+  /* 右侧外边距 */
+}
+
+.user-name {
+  font-weight: bold;
+  color: #F37335;
+}
+
+.like-section {
+  display: flex;
+  align-items: center;
+}
+
+.like-icon {
+  margin-right: 5px;
+  /* 右侧外边距 */
+  color: rgb(84, 84, 84);
+  /* 初始颜色 */
+  cursor: pointer;
+  /* 鼠标悬停时显示手型光标 */
+  transition: color 0.3s;
+  /* 添加颜色变化的过渡效果 */
+}
+
+.like-icon.red {
+  color: red;
+  /* 点击后变红 */
+}
+
+
+/*进行评论*/
+.comment-frame {
+  display: none;
+  /* 初始状态隐藏 */
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin: 0 100px;
+  margin-top: 20px;
+}
+
+.comment-frame.hidden {
+  display: none;
+  /* 隐藏评论板块 */
+}
+
+/* 左侧*/
+.left-section {
+  margin-right: 20px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ddd;
+  /* 用于显示用户头像 */
+  border-radius: 50%;
+  position: relative;
+  top: -60px;
+  left: 20px;
+}
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.comment-user-name {
+  font-weight: bold;
+  font-size: 22px;
+  color: #F37335;
+  position: relative;
+  top: -50px;
+  left: 24px;
+}
+
+/* 中间 */
+.middle-section {
+  margin: 0 50px;
+}
+
+.rating-section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-item {
+  margin-bottom: 10px;
+}
+
+.rating-item label {
+  font-weight: bold;
+}
+
+/*星星*/
+.stars {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.stars i {
+  color: grey;
+  /* 未选中的星星为灰色 */
+  cursor: pointer;
+  transition: color 0.3s;
+  /* 添加颜色变化的过渡效果 */
+}
+
+.comment-frame.hidden {
+  display: none;
+}
+
+
+
+/* 右侧 */
+.right-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-section {
+  margin-bottom: 20px;
+}
+
+.comment-textarea {
+  width: 600px;
+  /* 调整评论文本框的宽度 */
+  height: 200px;
+  /* 调整评论文本框的高度 */
+  padding: 15px;
+  /* 调整评论文本框的内边距 */
+  font-size: 17px;
+  /* 调整评论文本框中文字的大小 */
+  border-radius: 8px;
+  /* 调整评论文本框的边框半径 */
+
+  border: 1px solid #ccc;
+  resize: none;
+  line-height: 1.5;
+  margin: 0 50px;
+}
+
+.comment-textarea::placeholder {
+  color: #999;
+}
+
+.submit-button {
+  align-self: flex-end;
+}
+
+.submit-button button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+.save-button button:hover {
+  background-color: #0056b3;
+}
+
+.save-button {
+  align-self: flex-end;
+}
+
+.save-button button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+.save-button button:hover {
+  background-color: #0056b3;
+}
