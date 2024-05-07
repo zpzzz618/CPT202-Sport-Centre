@@ -1,0 +1,126 @@
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F37335;
+    height: 50px;
+    width:100%;
+    font-size: 17px;
+}
+
+.navbar li {
+    float: right;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 60px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #ff9a68;
+}
+
+
+.icon-u{
+    position: absolute;
+    left: 4%;
+}
+
+.mes-u{
+    position: absolute;
+    left: 7.5%;
+    font-size: 30px;
+    color: #fff8d3;
+    margin-top: 9px;
+}
+
+.payment-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.payment-option {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    /* 使用flexbox居中 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+    overflow: hidden;
+    /* 隐藏溢出的部分 */
+    position: relative;
+    /* 为了绝对定位内部的返回按钮 */
+
+}
+
+.payment-option img {
+    width: 100%;
+    /* 使图片宽度填满容器 */
+    height: auto;
+    /* 自动调整图片高度以保持宽高比 */
+    max-height: 100%;
+    /* 限制图片的最大高度，保证图片不会超出容器 */
+}
+
+.return-button {
+    padding: 10px 20px;
+    /* 按钮的内边距 */
+    position: absolute;
+    /* 绝对定位 */
+    bottom: 10px;
+    /* 位于容器底部 */
+    left: 10px;
+    /* 靠左对齐 */
+    cursor: pointer;
+}
+
+
+
+.return-container {
+    text-align: left;
+    /* 将按钮对齐到左边 */
+    margin-top: 20px;
+    /* 在支付选项和返回按钮之间添加一些空间 */
+}
+
+
+
+#returnButton,
+#confirm {
+    padding: 10px 20px;
+    /* 增加按钮的填充使其更容易点击 */
+    margin-left: 450px;
+    /* 和容器左边缘保持一定间隙 */
+    font-size: 1rem;
+    /* 设置字体大小 */
+    cursor: pointer;
+    /* 将鼠标光标变为指针 */
+}
+
+
+
+
+/* 针对不同屏幕大小调整图片尺寸 */
+@media (max-width: 768px) {
+    .payment-option {
+        padding: 10px;
+        /* 减小填充，为图片提供更多空间 */
+    }
+}

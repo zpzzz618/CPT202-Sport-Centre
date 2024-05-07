@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Center Management System</title>
+    <link rel="stylesheet" href="../css/personal_information_display.css">
+</head>
+
+<body>
+    <nav> <!--问题一：导航栏是做跟随移动还是固定的？-->
+        <ul class="navbar">
+            <li><a href="/user/html/personal_information_display.html">Personal Center</a></li>
+            <li><a href="/community/html/community.html">Community</a></li>
+            <li><a href="/piao/html/football_booking.html">Booking</a></li>
+            <li><a href="/home/html/homePage.html">Home</a></li>
+            <li id="admin"><a href="/admin/html/Admin.html">Admin</a></li>
+            <svg class="icon-u" width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+                <g transform="scale(0.26)">
+                  <!-- 体育馆主体，采用动感的波浪形状 -->
+                  <path d="M 20,100 C 50,30 150,30 180,100" fill="none" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆顶部，用直线连接波浪的两端 -->
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆门，用矩形表示 -->
+                  <rect x="70" y="90" width="60" height="20" fill="#FFEFD5" />
+                  <!-- 动感元素，表现运动的速度和能量 -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#FFEFD5" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="100" y1="20" x2="100" y2="80" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <!-- 太阳谷大学英文名称缩写，位于图标中心 -->
+                  <text x="100" y="140" font-family="Arial" font-size="30" fill="#FFEFD5" text-anchor="middle">SVU</text>
+                </g>
+              </svg>
+        
+              <p class="mes-u"><strong>SVU</strong></p>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <!-- Sidebar content -->
+            <div class="logo">
+                <div class="circle-avatar">
+                    <img src="/a_img/user_avatar.jpg" alt="Logo Icon">
+                </div>
+                <span class="logo-text"></span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="personal_information_display.html">Personal Information</a></li>
+                    <!-- 添加active类 -->
+                    <li><a href="body_information_display.html">Body Information</a></li>
+                    <li><a href="password_main_page.html">Password Zone</a></li>
+                    <li><a href="ticket_history.html">Ticket history</a></li>
+                    <li><a href="Voucher.html">Voucher</a></li>
+                </ul>
+                <div class="menu-item log-off">
+                    <a href="logout-url">Log Out</a> <!-- 将 href 的值设置为实际的登出脚本或页面 -->
+                </div>
+            </nav>
+
+        </aside>
+        <section class="content">
+            <!-- Content Header -->
+            <header>
+                <button id="toggleSidebar">☰</button>
+                <span class="header-title">Setting / Personal information</span>
+
+                <div class="header-container">
+                    <!-- Other header content -->
+                    <a href="add_personal_information.html" class="add-button">
+                        <img src="/a_img/add.png" alt="Add" />
+                    </a>
+                </div>
+
+                <div class="header-container">
+                    <!-- Other header content -->
+                    <a href="personal_information_modify.html" class="modify-button">
+                        <img src="/a_img/modify.png" alt="Modify" />
+                    </a>
+                </div>
+
+            </header>
+            <!-- Content Body -->
+            <div class="content-body">
+                <h2>Personal Information</h2>
+
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" value="" readonly>
+
+                    <label for="gender">Gender</label>
+                    <select id="gender" disabled>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" value="" readonly>
+
+                    <label for="country">Country</label>
+                    <input type="text" id="country" value="" readonly>
+
+                    <label for="city">City</label>
+                    <input type="text" id="city" value="" readonly>
+
+                    <label for="birthdate">Birthdate</label>
+                    <input type="date" id="birthdate" value="" readonly>
+
+                    <label for="telephone_number">Telephone number (电话号码)</label>
+                    <input type="tel" id="telephone_number" value="" readonly>
+
+                    <label for="alternate_telephone_number">Alternate telephone number (备用电话号码)</label>
+                    <input type="tel" id="alternate_telephone_number" value="" readonly>
+
+                    <label for="email">Email (电子邮件)</label>
+                    <input type="email" id="email" value="" readonly>
+
+                    <label for="id_number">ID Number (身份证件号码)</label>
+                    <input type="text" id="id_number" value="" readonly>
+
+                    <label for="school_or_organization">School/Organization (学校/单位信息)</label>
+                    <input type="text" id="school_or_organization" value="" readonly>
+
+                    <label for="address">Address (地址)</label>
+                    <input type="text" id="address" value="" readonly>
+
+
+
+                    <!-- 这些是可选的个人信息，例如 -->
+                    <!-- 
+                    {% if optional_info %}
+                    <label for="optional_field">Optional Field (可选项)</label>
+                    <input type="text" id="optional_field" value="{{ optional_info }}" readonly>
+                    {% endif %}
+
+                    {% if optional_info %}
+                    <label for="optional_field">Optional Field (可选项)</label>
+                    <input type="text" id="optional_field" value="{{ optional_info }}" readonly>
+                    {% endif %}
+                    {% if optional_info %}
+                    <label for="optional_field">Optional Field (可选项)</label>
+                    <input type="text" id="optional_field" value="{{ optional_info }}" readonly>
+                    {% endif %}
+                    {% if optional_info %}
+                    <label for="optional_field">Optional Field (可选项)</label>
+                    <input type="text" id="optional_field" value="{{ optional_info }}" readonly>
+                    {% endif %} -->
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../a_common/common.js"></script>
+    <script src="../js/personal_information_display.js"></script>
+</body>
+
+</html>

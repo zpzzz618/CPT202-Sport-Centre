@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Center Management System</title>
+    <link rel="stylesheet" href="../css/security_question.css">
+</head>
+
+<body>
+    <nav> <!--问题一：导航栏是做跟随移动还是固定的？-->
+        <ul class="navbar">
+            <li><a href="/user/html/personal_information_display.html">Personal Center</a></li>
+            <li><a href="/community/html/community.html">Community</a></li>
+            <li><a href="/piao/html/football_booking.html">Booking</a></li>
+            <li><a href="/home/html/homePage.html">Home</a></li>
+            <li id="admin"><a href="/admin/html/Admin.html">Admin</a></li>
+            <svg class="icon-u" width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+                <g transform="scale(0.26)">
+                  <!-- 体育馆主体，采用动感的波浪形状 -->
+                  <path d="M 20,100 C 50,30 150,30 180,100" fill="none" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆顶部，用直线连接波浪的两端 -->
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆门，用矩形表示 -->
+                  <rect x="70" y="90" width="60" height="20" fill="#FFEFD5" />
+                  <!-- 动感元素，表现运动的速度和能量 -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#FFEFD5" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="100" y1="20" x2="100" y2="80" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <!-- 太阳谷大学英文名称缩写，位于图标中心 -->
+                  <text x="100" y="140" font-family="Arial" font-size="30" fill="#FFEFD5" text-anchor="middle">SVU</text>
+                </g>
+              </svg>
+        
+              <p class="mes-u"><strong>SVU</strong></p>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <!-- Sidebar content -->
+            <div class="logo">
+                <div class="circle-avatar">
+                    <img src="photo.png" alt="Logo Icon">
+                </div>
+                <span class="logo-text"></span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="personal_information_display.html">Personal Information</a></li> <!-- 添加active类 -->
+                    <li><a href="body_information_display.html">Body Information</a></li>
+                    <li class="active"><a href="password_main_page.html">Password Zone</a></li>
+                    <li><a href="ticket_history.html">Ticket history</a></li>
+                    <li><a href="Voucher.html">Voucher</a></li>
+                </ul>
+                <div class="menu-item log-off">
+                    <a href="logout-url">Log Out</a> <!-- 将 href 的值设置为实际的登出脚本或页面 -->
+                </div>
+            </nav>
+
+        </aside>
+        <section class="content">
+            <!-- Content Header -->
+            <header>
+                <button id="toggleSidebar">☰</button>
+                <span class="header-title">Setting / Password Zone / Security Question</span>
+
+                <div class="header-container">
+                    <!-- Other header content -->
+                    <a href="security_question_modify.html" class="modify-button">
+                        <img src="/a_img/modify.png" alt="Modify" />
+                    </a>
+                </div>
+
+
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <h2>Security Question</h2>
+                <form>
+                    <label for="security_question_1">What's your favorite movie?: </label>
+                    <input type="text" id="security_question_1" placeholder="Enter your Answer to Security Question 1">
+
+                    <label for="security_question_2">What was the name of your first pet?: </label>
+                    <input type="text" id="security_question_2" placeholder="Enter your Answer to Security Question 2">
+
+                    <label for="security_question_3">What is your favorite subject?: </label>
+                    <input type="text" id="security_question_3" placeholder="Enter your Answer to Security Question 3">
+                </form>
+
+            </div>
+            </section>
+            </div>
+
+
+
+
+
+
+
+            <script src="../../a_common/common.js"></script>
+            <script>
+                //导航界面
+                document.getElementById('toggleSidebar').onclick = function () {
+                    var sidebar = document.querySelector('.sidebar');
+                    var content = document.querySelector('.content');
+
+                    if (sidebar.style.width === '250px' || !sidebar.style.width) {
+                        sidebar.style.width = '0';
+                        sidebar.style.padding = '0';
+                        content.style.marginLeft = '0';
+                        header.style.marginLeft = '0'; // 确保header的左边距也是0
+
+                    } else {
+                        sidebar.style.width = '250px';
+                        sidebar.style.padding = '15px';  // 重新应用原始内边距
+                        content.style.marginLeft = '265px';
+                        header.style.marginLeft = '265px'; // 和侧边栏宽度一致
+
+                    }
+                };
+            </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

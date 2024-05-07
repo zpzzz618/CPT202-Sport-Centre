@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Center Management System</title>
+    <link rel="stylesheet" href="../css/body_information_display.css">
+</head>
+
+<body>
+    <nav> <!--问题一：导航栏是做跟随移动还是固定的？-->
+        <ul class="navbar">
+            <li><a href="/user/html/personal_information_display.html">Personal Center</a></li>
+            <li><a href="/community/html/community.html">Community</a></li>
+            <li><a href="/piao/html/football_booking.html">Booking</a></li>
+            <li><a href="/home/html/homePage.html">Home</a></li>
+            <li id="admin"><a href="/admin/html/Admin.html">Admin</a></li>
+            <svg class="icon-u" width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+                <g transform="scale(0.26)">
+                  <!-- 体育馆主体，采用动感的波浪形状 -->
+                  <path d="M 20,100 C 50,30 150,30 180,100" fill="none" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆顶部，用直线连接波浪的两端 -->
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="rgb(51,51,51)" stroke-width="30"/>
+                  <!-- 体育馆门，用矩形表示 -->
+                  <rect x="70" y="90" width="60" height="20" fill="#FFEFD5" />
+                  <!-- 动感元素，表现运动的速度和能量 -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#FFEFD5" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="100" y1="20" x2="100" y2="80" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="RGB(243,120,61)" stroke-width="15" stroke-dasharray="30 30"/>
+                  <!-- 太阳谷大学英文名称缩写，位于图标中心 -->
+                  <text x="100" y="140" font-family="Arial" font-size="30" fill="#FFEFD5" text-anchor="middle">SVU</text>
+                </g>
+              </svg>
+        
+              <p class="mes-u"><strong>SVU</strong></p>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            
+
+        </aside>
+        <section class="content">
+            <!-- Content Header -->
+            <header>
+                <button id="toggleSidebar">☰</button>
+                <span class="header-title">Setting / Body Information</span>
+
+                <div class="header-container">
+                    <!-- Other header content -->
+
+                </div>
+
+                <div class="header-container">
+                    <!-- Other header content -->
+                    <a href="body_information_modify.html" class="modify-button">
+                        <img src="/a_img/modify.png" alt="Modify" />
+                    </a>
+                </div>
+
+            </header>
+            <!-- Content Body -->
+            <div class="content-body">
+                <h2>Body Information</h2>
+                <form>
+                    <label for="height">Height(cm)</label>
+                    <input type="number" id="height" value="" name="height" readonly>
+
+                    <label for="weight">Weight(Kg)</label>
+                    <input type="number" id="weight" value="" name="weight" readonly>
+
+                    <label for="bmi">BMI</label>
+                    <input type="number" id="bmi" value="" name="bmi" readonly>
+
+                    <label for="bmi">Vital Capacity</label>
+                    <input type="number" id="vital_capacity" name="vitalCapacity" value="" readonly>
+
+                    <label for="short_term_goal">Short-term Fitness Goal</label>
+                    <input type="text" id="short_term_goal" name="shortTermFitnessGoal" value="" readonly>
+
+                    <label for="long_term_goal">Long-term Fitness Goal</label>
+                    <input type="text" id="long_term_goal" name="longTermFitnessGoal" value="" readonly>
+
+                    <label for="special_goal">Special Fitness Goal (特殊健身目标)</label>
+                    <input type="text" id="special_goal" name="specialFitnessGoal" value="" readonly>
+
+                </form>
+            </div>
+
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../../a_common/common.js"></script>
+        <script src="../js/body_information_display.js"></script>
+</body>
+
+</html>
