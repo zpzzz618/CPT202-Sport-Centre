@@ -1,0 +1,637 @@
+body {  
+  margin: 0;  
+  padding: 0;  
+  font-family: Arial, sans-serif;  
+  background-color:#FFEFD5;
+}  
+/*------------------活动图区域----------------------*/
+
+#gang{
+  position: absolute;
+}
+
+.carousel {  
+  position: absolute;
+  bottom: 20vh;
+  left : 7%;  
+  width: 55%; /* 或者你想要的任何宽度 */  
+  height: 60%; /* 或者你想要的高度 */  
+  overflow: hidden; /* 隐藏超出容器的部分 */  
+} 
+
+.carousel-item { 
+  position: absolute; 
+  width: 100%;  
+  height: 100%;  
+  opacity: 0; 
+  transition: opacity 1s ease-in-out; 
+}  
+    
+.carousel-item.active {  
+  opacity: 1;  
+}
+
+.carousel-item img{
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;  
+}
+/*------------------点---------------------*/
+.carousel-dots {  
+    position: absolute;  
+    bottom: 2vh;  
+    left: 50%;  
+    transform: translateX(-50%);  
+    display: flex;  
+    justify-content: center;  
+  }  
+    
+  .dot {  
+    height: 10px;  
+    width: 10px;  
+    margin: 0 5px;  
+    background-color: #bbb;  
+    border-radius: 50%;  
+    display: inline-block;  
+    transition: background-color 0.3s ease;  
+  }  
+    
+  .dot.active {  
+    background-color: #717171;  
+  }
+
+/*--------------简介区域---------------------------*/
+.introduction{
+  background-color:#fbb24b62;
+  /*float:left;*/
+  width: 35%; /* 占屏幕四分之一宽度 */
+  height: 400px; /* 占屏幕四分之一高度 */
+  margin-top: 38vh;
+  margin-bottom: 15vh;
+  
+  position: absolute;
+ /* bottom: 8vh;*/
+  right: 7%;
+  overflow: hidden; /* 如果内容超出容器高度，允许滚动查看 */  
+ 
+  padding: 0px 10px 5px 10px; /* 添加内边距，使文字不会紧贴着容器的边缘 */  
+  box-sizing: border-box; /* 确保宽度和高度包含内边距和边框 */
+
+}
+
+.introduction p{
+  font-size: 18px;
+  padding-left: 70px;
+  padding-right: 70px;
+  color: white;
+}
+
+.introduction h2{
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+.introduction b{
+  color: #b5a48d;
+}
+
+.slogan{
+  /*background-color:#82602f;*/
+  width: 50%; 
+  height: 450px; 
+  margin-top: 1vh;
+
+  position: absolute;
+  right: 1%;
+  overflow: hidden; 
+  
+  padding-left: 30px;  
+  box-sizing: border-box; 
+
+}
+.slogan h1{
+  font-size: 90px;
+  margin-bottom: -70px;
+  
+  
+}
+.slogan b{
+  background-color: #f3b365;
+  color: #f3f3f3;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+.slogan strong{
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: rgb(51,51,51);
+  
+}
+
+/*--------------------HEATMAPMES----------------*/
+
+.mes{
+  
+  width: 30%; /* 占屏幕四分之一宽度 */
+  height: 60vh; /* 占屏幕四分之一高度 */
+  
+  position: absolute;
+  top: 125vh;/*+100*/
+  left: 25%;
+  color: rgb(51,51,51);
+}
+
+.mes h1{
+  background-color: #FBB24B;
+}
+
+/*-----------------------热力图-------------------------------*/
+.heatmap{
+/* background-color:#fac07d;
+  /*float:left;*/
+  width: 30%; /* 占屏幕四分之一宽度 */
+  height: 60vh; /* 占屏幕四分之一高度 */
+  
+  position: absolute;
+  top: 125vh;/*+100*/
+  right: 15%;
+}
+
+.svg-item { 
+  position: absolute;
+  opacity: 0; /* 初始时设置为透明 */  
+  transition: opacity 1s ease-in-out; /* 添加过渡效果 */  
+}  
+  
+.svg-item.active {  
+  opacity: 1; /* 当前活动的轮播项设置为不透明 */  
+}
+/*-------------------------------------选运动区域--------------------------------------------------------*/
+
+
+/* 其他样式保持不变 */
+.sportsname {  
+  margin: 0;  
+  padding: 0; 
+  width: 50%; /* 或任何你需要的宽度 */  
+  position: absolute;
+  top: 220vh;/*+100*/
+  right: 0%;
+}   
+
+.module-red {  
+  display: flex;  
+  flex-direction: column;
+  height: 15vh; 
+  background-color: #F5A046; 
+}  
+
+.module-blue {
+  display: flex;  
+  flex-direction: column;
+  height: 15vh; 
+  background-color: #FBB24B;  
+}  
+  
+.sportsname li a {  
+    display: block;  
+    color: white;  
+    text-align: center;    
+    padding: 1vh;
+    text-decoration: none;     
+    font-size: 3vh;
+
+    background-color: rgba(0, 0, 0, 0); /* 初始背景色设置为完全透明 */  
+    height: 1px; /* 初始高度为一条线 */  
+    /*overflow: hidden; /* 隐藏超出初始高度的内容 */  
+    /*如果需要加文字，就打开hidden*/
+    transition: height 0.3s ease; /* 高度过渡效果 */ 
+} 
+.sportsname ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+} 
+
+.sportsname li a:hover {  
+    height: 12.9vh;
+    background-color: #F56E2A;  
+}
+/*----------------------------*/
+
+
+/*-----------------选运动旁边图片-------------------------*/
+
+.image {
+    margin: 0;  
+    padding: 0;   
+    position: absolute;
+    top: 235vh;/*+100*/
+    left : 5%;
+  width: 38vw; /* 宽度为视口宽度的30% 40*/  
+  height: 85vh; /* 高度为视口高度的60% 90*/  
+  overflow: hidden; /* 如果图片原始比例不符合容器，隐藏多余部分 */  
+}   
+  
+.image img {  
+  width: 100%; /* 图片宽度设置为容器宽度 */  
+  height: auto; /* 图片高度自动，以保持原始比例 */  
+  object-fit: cover; /* 确保图片覆盖整个容器，可能剪裁图片以保持比例 */  
+}
+
+/*---------------------场馆信息-------------------------*/
+.information{  
+  /*float:left;*/
+  width: 100%; /* 占屏幕四分之一宽度 */
+  position: absolute;
+  top: 350vh;/*+100*/
+  left: 0;
+  color:RGB(51,51,51);  
+}
+
+.information p{
+  color:RGB(51,51,51);
+  text-align: center;
+  font-size: 12vh;
+}
+
+.information2 p{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 12vh;
+  /*background-color: #d97b7b;*/
+  color:RGB(51,51,51);
+}
+
+.information3{
+  width: 100%; /* 占屏幕四分之一宽度 */
+  position: absolute;
+  top: 95vh;/*+100*/
+  left: 0;
+  color:RGB(51,51,51);
+}
+
+.information3 p{
+  color:RGB(51,51,51);
+  text-align: center;
+  font-size: 12vh;
+}
+
+.information4{
+  width: 100%; /* 占屏幕四分之一宽度 */
+  position: absolute;
+  top: 185vh;/*+100*/
+  left: 0;
+  color:RGB(51,51,51);
+}
+
+.information4 p{
+  color:RGB(51,51,51);
+  text-align: center;
+  font-size: 12vh;
+}
+/*----------------购票教程-------------------------*/
+
+
+/*--------------*/
+.guide {  
+  background-color: #FFEFD5; /* 背景色 */ 
+  display: flex;  
+  overflow-x: auto; /* 允许横向滚动 */  
+  width: 100%; /* 宽度为容器宽度 */  
+  margin-top: 385vh; /* 距离页面顶部 300vh */
+  height: 50vh; /* guide 的高度为 50vh */  
+  /*align-items: stretch; /* 确保 ttl 的高度填满 guide */  
+
+  align-items: center; /* 在垂直轴上居中 ttl 元素 */  
+  justify-content: space-between; /* 水平方向上均匀分布 ttl 元素 */ 
+
+  scroll-snap-type: x mandatory; /* 开启滚动捕捉 */
+}  
+
+.ttl {  
+  flex: 0 0 30vw; /* 每个 ttl 的宽度为 30vw，不伸缩 */  
+  margin-right: 10vw; /* 每个 ttl 之间的间距为 10vw */  
+  height: 40vh; /* ttl 的高度为 40vh */  
+  background-color: #f3b365; /* 背景色 */  
+  display: flex; /* 允许在 ttl 中垂直居中内容 */ 
+  flex-direction: column; 
+  align-items: center; /* 垂直居中内容 */  
+  justify-content: center; /* 水平居中内容 */  
+  margin-bottom: 40px;
+  /*scroll-snap-align: start; /* 捕捉滚动对齐 */ 
+
+  border-radius: 10px;
+  color: rgb(51,51,51);
+} 
+
+.ttl h2{
+  text-align: center; /* 使得h2和ol内的内容都居中显示 */  
+  margin: 10px; /* 移除默认的margin，确保h2紧贴上方的边界 */   
+}
+
+.ttl ol {  
+  /* ol的样式可以根据需要调整 */  
+  list-style-position: inside; /* 列表符号显示在文本内部 */  
+  padding-left: 28px; /* 移除默认的padding-left，因为使用了text-align: center在父元素上 */  
+  padding-right: 28px;
+  margin: 10px; /* 移除默认的margin */  
+  font-size: 20px;
+}
+
+/* 移除最后一个 ttl 的右边距 */  
+.ttl:last-child {  
+  margin-right: 0;  
+}
+
+.guide::-webkit-scrollbar {  
+ /* display: none; /* 隐藏滑动条 */ 
+   
+  width: 3px; /* 宽度 */  
+}  
+  
+/* 滑动条轨道 */  
+.guide::-webkit-scrollbar-track {  
+  background: #fff8d3; /* 背景颜色 */  
+}  
+  
+/* 滑动条滑块 */  
+.guide::-webkit-scrollbar-thumb {  
+  background: #fed468; /* 滑块颜色 */  
+}  
+  
+/* 鼠标悬停在滑块上时 */  
+.guide::-webkit-scrollbar-thumb:hover {  
+  background: #ffcf23; /* 悬停颜色 */  
+}
+
+/*---------------------------导航栏---------------------------*/
+
+.navbar {  
+    list-style-type: none;  
+    margin: 0;  
+    padding: 0;  
+    overflow: hidden;  
+    background-color: RGB(243,120,61);  
+    height: 50px;
+    width: 100%;
+    /*font-weight: bold;*/
+    font-size: 17px;
+}  
+  
+.navbar li {  
+    float: right;  
+}  
+  
+.navbar li a {  
+    display: block;  
+    color: white;  
+    text-align: center;  
+    padding: 12px 60px;  
+    text-decoration: none;  
+}  
+  
+.navbar li a:hover {  
+    background-color:#ff9a68;  
+}
+
+.icon-u{
+  position: absolute;
+  left: 4%;
+}
+
+.mes-u{
+  position: absolute;
+  left: 7.5%;
+  font-size: 30px;
+  color: #fff8d3;
+  margin-top: 9px;
+}
+
+/*------------导航栏下拉框------------------*/
+
+/* 下拉框样式 */  
+.dropdown-menu {  
+  display: none; /* 默认隐藏下拉框 */  
+  position: absolute;  
+  background-color: #fff;  
+  min-width: 180px; /* 根据需要调整宽度 */  
+  height: 360px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);  
+  z-index: 1; /* 确保下拉框显示在其他内容之上 */  
+  padding: 0; /* 移除默认的padding */  
+  margin-top: 0;
+}  
+  
+/* 下拉框中的列表项样式 */  
+.dropdown-menu li {  
+  list-style-type: none; /* 移除列表项前的圆点 */  
+  margin: 0; /* 移除列表项之间的额外间距 */  
+  padding-right: 20px; /* 移除列表项内部的额外间距 */  
+
+}  
+  
+/* 下拉框中的链接样式 */  
+.dropdown-menu li a {  
+  color: #333;  
+  padding: 15px 17px 15px 17px; /* 根据需要调整内边距 */  
+  text-decoration: none;  
+  display:inline-block; /* 确保链接占据整行 */  
+  text-align: center; /* 文本居中显示 */ 
+  height: 25px;
+  width: 160px; 
+}  
+  
+/* 显示下拉框 */  
+.dropdown:hover .dropdown-menu {  
+  display: block;  
+}
+
+
+/*-------------*/
+button {  
+  padding: 15px 69px 15px 69px; /* 内边距，控制按钮内部的空间 */  
+  font-size: 16px; /* 字体大小 */  
+  color: white; /* 字体颜色 */  
+  background-color: #F37335; /* 背景颜色 */  
+  border: none; /* 无边框 */  
+  border-radius: 4px; /* 边框圆角 */  
+  cursor: pointer; /* 鼠标悬停时变为手形图标 */  
+  transition: background-color 0.3s ease; /* 背景颜色过渡效果 */  
+  
+}  
+  
+/* 鼠标悬停时改变按钮背景颜色 */  
+button:hover {  
+  background-color: #ff9a68; /* 悬停时的背景颜色 */  
+} 
+
+/*--------------------------------------------*/
+.i-page {  
+  margin: 0; /* 移除默认的边距 */  
+  padding: 0; /* 移除默认的填充 */  
+  font-family: Arial, sans-serif; /* 设置字体 */  
+ /* background-color: #eb8585; /* 设置背景色 */  
+  display: flex; /* 使得body的子元素可以使用flex布局 */  
+  justify-content: center; /* 水平居中 */  
+  align-items: center; /* 垂直居中 */  
+  height: 100vh; /* 使得body占据整个视口的高度 */  
+  overflow: hidden;
+  margin-top: 0; /* 距离页面顶部 300vh */
+} 
+
+.threecircle{
+  /*background-color: aquamarine;*/
+  position: absolute;
+  /*top: 30%;
+  right: 1vw;
+  /*570/2=285*/
+}
+
+.icon{
+  opacity: 0.6;
+}
+
+
+
+  
+.centercircle {  
+  /*background-color: rgb(252, 223, 223);*/
+  display: flex;  
+  justify-content: center; /* 水平居中 */  
+  align-items: center; /* 垂直居中 */  
+  position: relative; /* 设置为相对定位，以便子元素可以使用绝对定位 */  
+  width: 100vw;  
+  height: 100vh;  
+}  
+
+.centercircle svg {  
+  position: absolute; /* 绝对定位，使得第二个SVG可以叠加在第一个SVG上 */ 
+}  
+
+.centercircle div {
+  position: absolute;
+ /* background-color: aquamarine;*/
+  width: 530px;
+  height: 500px;
+  font-size: 23px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:RGB(112,112,112)
+}
+.centercircle p {  
+  line-height: 1.5; /* 调整行高 */  
+  margin: 0; /* 移除默认的margin */  
+  padding: 0; /* 移除默认的padding */  
+}  
+
+/* 设置br标签后的样式，以创建行间距 */  
+.centercircle br {  
+  display: block; /* br标签默认就是块级元素，但明确指定有助于样式一致性 */  
+  content: ""; /* 不需要内容 */  
+  margin-bottom: 10px; /* 设置br标签后的间距 */  
+} 
+
+ol {  
+  list-style-type: decimal; /* 使用数字作为列表项标记 */  
+  padding-left: 20px; /* 增加列表项的左内边距 */  
+}  
+
+li {  
+  line-height: 1.6; /* 调整行高 */  
+  margin-bottom: 10px; /* 设置列表项之间的间距 */  
+} 
+
+.number {  
+  position: absolute;  
+  top: 486vh; /* 距离屏幕顶部的距离 */  
+  left: 50px; /* 距离屏幕左侧的距离 */  
+}  
+
+.number-item {  
+  margin: 0; /* 移除h1标签的默认外边距 */  
+  padding: 10px; /* 根据需要添加内边距 */ 
+  font-size: 100px; 
+}  
+
+.service {  
+  position: absolute;  
+  top: 560vh; /* 距离屏幕底部的距离 */  
+  left: 50px; /* 距离屏幕左侧的距离 */  
+}  
+
+.service-item {  
+  margin: 0; /* 移除h2标签的默认外边距 */  
+  padding: 10px; /* 根据需要添加内边距 */  
+  font-size: 80px;
+}
+
+.progress-bar-container { 
+  position: absolute;  
+  top:555vh; /* 距离屏幕底部的距离 */  
+  left: 60px; /* 距离屏幕左侧的距离 */  
+  width: 200px; /* 或者你想要的宽度 */  
+  background-color: #f3f3f3;  
+  border-radius: 10px;  
+  overflow: hidden;  
+}  
+
+
+.progress-bar {  
+  height: 10px; /* 或您希望的任何高度 */  
+  width: 0; /* 初始宽度为0 */  
+  background-color:  #F37335;  
+  /* 其他样式 */ 
+  border-radius: 10px;  
+  transition: width 0.5s linear; /* 添加过渡效果使进度条平滑移动 */  
+}
+
+/*----------------------------底部信息-----------------------*/
+
+/* 底部样式 */  
+.footer {  
+  background-color: #20252c;  
+  color: #fff;  
+  padding: 20px 0;  
+  text-align: center;  
+  position: absolute;  
+  left: 0;  
+  top: 578vh;  
+  width: 100%;
+  height: 150px; 
+
+  /* 设置左上角和右上角的圆角为 5px */ 
+  border-top-left-radius: 300px;  
+  border-top-right-radius: 300px; 
+  border-bottom-left-radius: 165px;  
+  border-bottom-right-radius: 165px;
+}  
+
+.footer nav ul {  
+  list-style: none;  
+  margin: 0;  
+  padding: 15px;  
+  display: flex; /* 使用Flexbox布局 */  
+  justify-content: center; /* 水平居中对齐 */  
+}  
+
+.footer nav ul li {  
+  margin: 0 10px; /* 添加左右外边距，使链接之间有间隔 */  
+}  
+
+.footer nav ul li a {  
+  font-size: 18px;
+  color: #fff;  
+  text-decoration: none;  
+}  
+
+.footer nav ul li a:hover {  
+  text-decoration: underline;  
+}  
+
+.copyright {  
+  margin-top: 10px;  
+  font-size: 15px;  
+}

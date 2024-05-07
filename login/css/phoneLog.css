@@ -1,0 +1,35 @@
+body, html {  
+    margin: 0;  
+    padding: 0;  
+    height: 100%;  
+    overflow: hidden; /* 防止整体页面滚动 */  
+}  
+  
+.container {  
+    display: flex;  
+    flex-direction: column;  
+    height: 100vh; /* 视口高度 */  
+}  
+  
+.page-content {  
+    flex: 1; /* 占据剩余空间 */  
+    padding: 20px;  
+    box-sizing: border-box;  
+    overflow-y: auto; /* 如果需要，页面内容可以滚动 */  
+}  
+  
+.comment-box {  
+    position: fixed; /* 固定定位 */  
+    bottom: 0; /* 固定在页面底部 */  
+    width: 100%; /* 宽度占满整个页面 */  
+    background-color: #fff; /* 背景色 */  
+    border-top: 1px solid #ccc; /* 上边框 */  
+    z-index: 100; /* 确保在其他内容之上 */  
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */  
+}  
+  
+.comment-content {  
+    padding: 10px;  
+    max-height: 300px; /* 设置最大高度，超过后显示滚动条 */  
+    overflow-y: auto; /* 垂直滚动 */  
+}

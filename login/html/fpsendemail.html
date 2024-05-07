@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find back password</title>
+    <link rel="stylesheet" href="../css/fpsendemail.css">
+
+</head>
+
+<body>
+
+    <form action="/findPassword" method="post">
+        <div class="find-box">
+            
+            <div class="input">
+                <div class="input-combin1">
+                    <label for="name"><b>Username:</b></label>
+                    <input type="text" id="name" name="userName" required>
+                </div>
+                <div class="input-combin2">
+                    <label for="email"><b>E-mail:</b></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button class="onebutton" type="submit" id="confirm"><b>Confirm</b></button>
+        </div>
+        <div>
+            <button class="twobutton" type="confirm" id="back"><b>Back</b></button>
+        </div>
+    </form>
+
+    <div class="biaoti">
+        <h1>Reset password</h1> 
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/a_common/common.js"></script>
+    <script src="../js/backtologtest.js"></script>
+</body>
+
+</html>
